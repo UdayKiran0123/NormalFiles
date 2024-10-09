@@ -1,0 +1,45 @@
+Adobe Edge Delivery Services (EDS) is primarily a cloud-based solution that doesn’t require traditional installation. Instead, setting it up involves configuration and integration steps to ensure your content is delivered effectively. Here’s a general guide to getting started:
+1. The fastest and easiest way to get started following AEM best practices is to create your repository using the Boilerplate GitHub repository as a template.https://github.com/adobe/aem-boilerplate
+ 
+2. Just click the Use this template button and select Create a new repository, and select where you want to create this repository.
+We recommend that the repository is set to public.
+ 
+3. The only remaining step in GitHub is to install the AEM Code Sync GitHub App on your repository by visiting this link: https://github.com/apps/aem-code-sync/installations/new
+ 
+In the Repository access settings of the AEM Code Sync App, make sure you select Only select Repositories (not All Repositories). Then select your newly created repository, and click Save.
+ 
+Note: If you are using Github Enterprise with IP filtering, you can add the following IP to the allow list: 3.227.118.73
+ 
+Congratulations! You have a new website running on https://<branch>--<repo>--<owner>.hlx.page/ In the example above that’s https://main--my-website--lighthouse100.hlx.page/
+ 
+ 
+Link your own content source using Google DriveIn your fork of the Boilerplate GitHub repository, the site points to an existing content source in Google Drive.
+ 
+This content is read-only, but it can be copied into your Google Drive folder to serve as a starting point.
+ 
+To author your own content, create a folder in your own Google Drive and share the folder with the Adobe Experience Manager user (helix@adobe.com).
+ 
+ 
+Preview and publish your content
+ 
+To preview content, an author has to install the Sidekick Chrome extension. Find the Chrome extension here.
+ 
+As soon as the extension is installed and your project is added, you are ready to preview and publish your content from your Google Drive.
+ 
+Select all three docs and activate the AEM Sidekick by clicking on your pinned extension. A new toolbar will appear. Clicking the preview or publish buttons will trigger the corresponding operation.
+ 
+Open the index doc and make some changes. Activate the Sidekick by clicking on your pinned extension and then click the Preview button which will trigger the preview operation and open a new tab with the preview rendition of the content.
+ 
+ 
+Start developing styling and functionality
+Install the AEM Command Line Interface (CLI) and clone your repo locally through using the following.
+npm install -g @adobe/aem-cli
+git clone https://github.com/<owner>/<repo>
+ 
+From there change into your project folder and start your local dev environment using the following.
+cd <repo>
+aem up
+ 
+This opens http://localhost:3000/ and you are ready to make changes.
+A good place to start is in the blocks folder which is where most of the styling and code lives for a project. Simply make a change in a .css or .js and you should see the changes in your browser immediately.
+Once you are are ready to push your changes, simply use Git to add, commit, and push and your code to your preview (https://<branch>--<repo>--<owner>.hlx.page/) and production (https://<branch>--<repo>--<owner>.hlx.live/) sites.
